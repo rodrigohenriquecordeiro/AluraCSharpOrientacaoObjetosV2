@@ -35,4 +35,18 @@ internal class LinqFilter
             Console.WriteLine($"- {musica.Nome}");
         }
     }
+
+    internal static void FiltrarMusicasEmCSharp(List<Musica> musicas)
+    {
+        var musicasEmCSharp = musicas
+            .Where(m => m.Tonalidade.Equals("C#"))
+            .Select(m => m.Nome)
+            .ToList();
+        Console.WriteLine("Músicas em C#");
+
+        foreach (var musica in musicasEmCSharp)
+        {
+            Console.WriteLine($"- {musica}");
+        }
+    }
 }
